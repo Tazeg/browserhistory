@@ -1,0 +1,56 @@
+{
+  "name": "browserhistory",
+  "version": "1.0.0",
+  "description": "Forensics for Chrome/Chromium based browsers.",
+  "main": "main.js",
+  "build": {
+    "appId": "com.jeffprod.browserhistory",
+    "directories": {
+      "output": "../dist",
+      "buildResources": "../assets"
+    },
+    "linux": {
+      "asar": true,
+      "category": "Network",
+      "artifactName": "${name}-v${version}-linux.${ext}",
+      "target": [
+        "AppImage"
+      ]
+    },
+    "win": {
+      "asar": true,
+      "icon": "app/img/icon_app_256.ico",
+      "legalTrademarks": "(c) 2020 JeffProd.com",
+      "publisherName": "JeffProd.com",
+      "artifactName": "${name}-v${version}-windows.${ext}",
+      "target": [
+        "portable"
+      ]
+    }
+  },
+  "scripts": {
+    "start": "ELECTRON_MODE=prod electron .",
+    "serve": "ELECTRON_MODE=dev electron .",
+    "dev": "ELECTRON_MODE=dev electron .",
+    "lint": "eslint . --fix",
+    "buildlin": "electron-builder -l --x64",
+    "buildwin": "electron-builder -w --x64"
+  },
+  "author": "@JeffProd",
+  "license": "MIT",
+  "dependencies": {
+    "sql.js": "^1.3.2",
+    "view-design": "^4.4.0-rc.1",
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "electron": "^10.1.3",
+    "electron-builder": "^22.8.1",
+    "eslint": "^7.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}
